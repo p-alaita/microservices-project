@@ -21,12 +21,12 @@ script:
   - docker tag udagram-api-user palaita21/udagram-api-user:latest
   - docker build -t udagram-frontend ./udagram-frontend
   - docker tag udagram-frontend palaita21/udagram-frontend:latest
-  - docker build -t reverseproxy ./reverseproxy
-  - docker tag reverseproxy palaita21/reverseproxy:latest
+  - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+  - docker tag udagram-reverseproxy palaita21/udagram-reverseproxy:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push palaita21/udagram-api-feed:latest
   - docker push palaita21/udagram-api-user:latest
   - docker push palaita21/udagram-frontend:latest
-  - docker push palaita21/reverseproxy:latest
+  - docker push palaita21/udagram-reverseproxy:latest
