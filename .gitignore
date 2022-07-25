@@ -1,6 +1,9 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+set_env.sh
+*aws-secret.yaml
+
 *~
 *.sw[mnpcod]
 *.log
@@ -40,4 +43,4 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-set_env.sh
+
